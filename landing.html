@@ -6,7 +6,6 @@
     <title>Real Estate Homepage</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
 </head>
 <body>
     <!-- Announcement Bar -->
@@ -30,16 +29,21 @@
         <nav class="nav-menu">
             <ul>
                 <li><a href="#">About</a></li>
-
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle">Resources <i class="fa-solid fa-angle-down"></i></a>
-                    </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Resources <i class="fa-solid fa-angle-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Free Resources</a></li>
+                        <li><a href="#">Courses</a></li>
+                        <li><a href="#">Workshops</a></li>
+                    </ul>
+                </li>
                 <li><a href="#">JV with me</a></li>
                 <li><a href="#">Buyer’s Map</a></li>
                 <li><a href="#">Contact Us</a></li>
             </ul>
         </nav>
     </header>
+    
     <section class="hero-section">
         <div class="container">
             <div class="content">
@@ -57,7 +61,7 @@
         </div>
     </section>
     <section class="featured-courses">
-        <h2>FEATURED COURSES</h2>
+        <h2>FEATURED COURSES</h2><br><br><br><br>
         <div class="course-container">
             <!-- Course 1 -->
             <div class="course-card">
@@ -97,15 +101,15 @@
         </div>
     </section>
     <section class="section">
-        <h2>FREE RESOURCES</h2>
+        <br><h2>FREE RESOURCES</h2>
         <p>A collection designed to carve a smooth and successful path for you.</p>
         
         <div class="book-container">
-            <img src="images/book1.png" alt="Book 1">
-            <img src="images/book2.png" alt="Book 2">
-            <img src="images/book3.png" alt="Book 3">
-            <img src="images/book4.png" alt="Book 4">
-            <img src="images/book5.png" alt="Book 5">
+            <div class="book"><img src="images/book1.png" alt="Book 1"></div>
+            <div class="book"><img src="images/book2.png" alt="Book 2"></div>
+            <div class="book"><img src="images/book3.png" alt="Book 3"></div>
+            <div class="book"><img src="images/book4.png" alt="Book 4"></div>
+            <div class="book"><img src="images/book5.png" alt="Book 5"></div>
         </div>
     
         <div class="dots">
@@ -116,6 +120,140 @@
             <div class="dot"></div>
         </div>
     </section>
+    <section class="faq-section">
+        <h2>FREQUENTLY ASKED QUESTIONS (FAQs)</h2>
+    
+        <div class="faq-container">
+            <!-- Left Side: Image + Button -->
+            <div class="faq-left">
+                <div class="faq-image">
+                    <img src="images/question-icon.png" alt="FAQ Icon">
+                </div>
+                <button class="connect-btn">Connect with us →</button>
+            </div>
+    
+            <!-- Right Side: FAQ Content -->
+            <div class="faq-right">
+                <div class="faq-content">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            How long does it take to sell a house?
+                            <button class="toggle-btn">
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </button>
+                        </div>
+                        <div class="faq-answer">
+                            <p>The timeline to sell a house depends on factors such as location, market conditions, and pricing.On average, homes sell within a few weeks to a couple of months.</p>
+                        </div>
+                    </div>
+    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            How do I know the market value of my property?
+                            <button class="toggle-btn">
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </button>
+                        </div>
+                        <div class="faq-answer">
+                            <p>You can determine your property’s market value through professional appraisals or real estate agent consultations.</p>
+                        </div>
+                    </div>
+    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            What is the process of buying a home with your company?
+                            <button class="toggle-btn">
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </button>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Our process includes property selection, financing assistance, documentation, and legal formalities.</p>
+                        </div>
+                    </div>
+    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            What are the costs involved in selling a property?
+                            <button class="toggle-btn">
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </button>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Costs may include agent commissions, legal fees, and home staging expenses.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="founders-section">
+        <div class="founders-container">
+            <div class="founders-image">
+                <img src="images/founders.jpg" alt="Founders Image">
+                <div class="overlay-text">ENTREPRENEUR</div>
+            </div>
+            <div class="founders-content">
+                <h2>About our Founders</h2>
+                <p>
+                    We’re <span>Justin</span> and <span>John Pickell,</span> a father-son team passionate about helping others achieve financial freedom through real estate. 
+                    <br><br>Justin transitioned from day trading to real estate, bringing expertise in risk management and strategic decision-making to the investment world. John, a seasoned investor and mentor, has decades of experience in market analysis, deal structuring, and portfolio growth. 
+                    <br><br>Together, we combine proven strategies with innovative insights to help investors scale their businesses, make smart investments, and build long-term wealth through real estate.
+                </p>
+                <button class="read-more-btn">Read More <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+        </div>
+    </section>
+    <section class="newsletter">
+        <div class="card">
+            <div class="icon">
+                <img src="images/envelope.png" alt="Envelope Icon" >
+            </div>
+            
+            <h2>RECEIVE JUSTIN'S NEWSLETTER</h2>
+            <p>Free Wholesale Real Estate and Business Tips Delivered to Your Inbox</p>
+            <div class="subscribe-form">
+                <input type="email" placeholder="Enter Your Email ID" required>
+                <button>Subscribe</button>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <!-- Left Section: Logo and Privacy Links -->
+        <div class="footer-left">
+            <img src="images/justin-logo.png" alt="Justin Pickell" class="footer-logo">
+            <div class="privacy-links">
+                <a href="#">Privacy Policy</a> | 
+                <a href="#">Terms of Service</a> | 
+                <a href="#">Accessibility Statement</a>
+            </div>
+        </div>
+    
+        <!-- Right Section: Footer Links (2 Equal Columns) & Social Icons -->
+        <div class="footer-right">
+            <div class="footer-links">
+                <ul>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Courses</a></li>
+                    <li><a href="#">Workshops</a></li>
+                    <li><a href="#">Buyer Map</a></li>
+                </ul>
+                <ul>
+                    <li><a href="#">Media</a></li>
+                    <li><a href="#">Partner with Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    
+        <!-- Copyright -->
+        <p class="copyright">© 2025, by justpickell.com LLC</p>
+    </footer>
     
     <script src="script.js"></script>
 </body>

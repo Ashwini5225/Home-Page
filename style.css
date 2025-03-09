@@ -120,6 +120,16 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
 }
+body {
+    padding-top: 120px; /* Ensures content starts below fixed header and announcement bar */
+}
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 
 .announcement-bar {
 
@@ -130,7 +140,11 @@ body {
     justify-content: space-between;
     background: #111111;
     color: white;
-    position: sticky;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
 }
 * {
     margin: 0;
@@ -170,6 +184,8 @@ body {
     background: #222;
     border-radius: 50%;
     text-decoration: none;
+    margin-left: 15px;
+    font-size: 18px;
 }
 
 .social-icons img {
@@ -195,10 +211,20 @@ body {
     padding: 0 40px;
     background-color: white;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+    position: fixed;
+    left: 0;
+    width: 100%;
+
+}
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
 }
 
 .logo img {
-    width: 137px;
+    width: 150px !important;
     height: 62px;
 }
 
@@ -212,6 +238,7 @@ body {
 
 .nav-menu ul li {
     position: relative;
+    margin: 0 15px;
 }
 
 .nav-menu ul li a {
@@ -220,33 +247,13 @@ body {
     font-size: 16px;
     font-weight: 500;
     padding: 10px 15px;
+    display: block;
 }
 
 .nav-menu ul li a:hover {
     color: #007BFF;
 }
 
-.dropdown-menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background: white;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    padding: 10px;
-}
-
-.dropdown:hover .dropdown-menu {
-    display: block;
-}
-
-.dropdown-menu li {
-    padding: 5px 10px;
-}
-
-.dropdown-menu li a {
-    color: black;
-}
 .brands {
     text-align: center;
     margin-top: 30px;
@@ -262,6 +269,15 @@ body {
     background: #f9f9f9;
     text-align: center;
     padding: 50px 20px;
+    margin-top: 100px;
+    display: flex;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+
 }
 
 .container {
@@ -327,6 +343,9 @@ body {
     width:600px;
     margin-top: -500px;
     margin-left: -150px;
+    max-width: 100%; /* Ensures images don’t overflow */
+    height: auto; 
+    margin: auto;
     
 
 }
@@ -334,6 +353,9 @@ body {
     
     margin-top: -300px;
     margin-right: -100px;
+    max-width: 100%; /* Ensures images don’t overflow */
+    height: auto; 
+    margin: auto;
 }
 * {
     margin: 0;
@@ -563,6 +585,10 @@ body {
     width: 137px;
     height: 62px;
 }
+.logo {
+    display: flex;
+    align-items: center;
+}
 
 .nav-menu ul {
     list-style: none;
@@ -588,27 +614,12 @@ body {
     color: #007BFF;
 }
 
-.dropdown-menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background: white;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    padding: 10px;
-}
 
 .dropdown:hover .dropdown-menu {
     display: block;
 }
 
-.dropdown-menu li {
-    padding: 5px 10px;
-}
 
-.dropdown-menu li a {
-    color: black;
-}
 .brands {
     text-align: center;
     margin-top: 30px;
@@ -877,35 +888,7 @@ h2 {
     margin-bottom: 20px;
 }
 
-.book-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 80px;
-    width: 900px;
-    margin-left: 100px;
-    margin-right: 100px;
-}
 
-.book-container img {
-    margin: 0; /* Ensure no extra margin */
-    padding: 0; /* Ensure no extra padding */
-    display: block; /* Removes any inline spacing */
-}
-
-
-
-
-/* Set different sizes for each book */
-.book-container img:nth-child(1) { width: 280.88px; height: 274.14px; }
-.book-container img:nth-child(2) { width: 280.88px; height: 274.14px; }
-.book-container img:nth-child(3) { width: 400px; height: 348.50px; }
-.book-container img:nth-child(4) { width: 280px; height: 274.14px; }
-.book-container img:nth-child(5) { width: 280px; height: 274.14px; }
-
-.book-container img:hover {
-    transform: scale(1.05); /* Slight zoom on hover */
-}
 /* Dots container - center dots */
 .dots {
     display: flex;
@@ -928,4 +911,806 @@ h2 {
 /* Active dot - highlighted */
 .dot.active {
     background-color: black;
+}
+.faq-section {
+    width: 100%;
+    padding: 40px 0;
+    background: white;
+    text-align: center;
+}
+
+.faq-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px; /* Space between two columns */
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+/* Left Side: Image + Button */
+.faq-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%; /* Adjust as needed */
+}
+
+.faq-image img {
+    width:227.16px;
+    height:207px;
+}
+
+/* Right Side: FAQ Content */
+.faq-right {
+    width: 65%;
+}
+
+.faq-content {
+    text-align: left;
+}
+
+/* FAQ Item */
+.faq-item {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+    overflow: hidden;
+    transition: height 0.3s ease-in-out, margin 0.3s ease-in-out;
+    height: 55px;
+}
+
+.faq-item.active {
+    height: 145px;
+    margin: 20px 0;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+/* FAQ Answer */
+.faq-answer {
+    display: none;
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif !important;
+    color: #555;
+    font-weight: 400px;
+    line-height: 100%;
+    
+    letter-spacing: 0%;
+    
+}
+
+/* Expand Answer when Active */
+.faq-item.active .faq-answer {
+    display: block;
+}
+
+/* Toggle Button */
+.toggle-btn {
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Rotate icon when active */
+.faq-item.active .toggle-btn i {
+    transform: rotate(180deg);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Connect Button */
+.connect-btn {
+    padding: 12px 20px;
+    background: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    text-decoration: none;
+    width: 364px;
+    height: 65.28px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.connect-btn:hover {
+    background: #333;
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+.faq-question {
+    display: flex;
+    justify-content: space-between; /* Push button to right */
+    align-items: center; /* Align text and button vertically */
+    font-size: 20px; /* Increase question text size */
+     /* Make it bold for better visibility */
+    padding: 15px 0;
+    cursor: pointer;
+    margin-bottom: 10px;
+    font-family: 'Poppins', sans-serif;
+}
+.faq-question span {
+    font-size: 18px; /* Increase question size */
+    font-weight: 600; /* Make it slightly bold */
+    font-family: 'Poppins', sans-serif; /* Apply Poppins font */
+    flex: 1; /* Take up available space */
+}
+
+/* Increase icon size */
+.toggle-btn {
+    background: none;
+    border: none;
+    font-size: 20px; /* Increase icon size */
+    cursor: pointer;
+    padding: 5px;
+}
+.faq-item {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 70px; /* Add space between question and separator */
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+.founders-section {
+    background-color: #f8f8f8;
+    padding: 60px 10%;
+    display: flex;
+    justify-content: center;
+}
+
+.founders-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    width: 100%;
+    gap: 100px; /* Set gap between image and content */
+}
+
+.founders-image {
+    position: relative;
+    width: 580.79px;  /* Exact width */
+    height: 653.12px; /* Exact height */
+    display: flex;
+    align-items: center;
+}
+
+.founders-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.overlay-text {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 36px;
+    font-weight: 700;
+    color: white;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.founders-content {
+    width: 482px;  /* Exact width */
+    height: 634px; /* Exact height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px; /* Keeps spacing consistent */
+}
+
+.founders-content h2 {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.founders-content p {
+    font-size: 18px;
+    line-height: 1.4;
+    text-align: justify;
+    font-weight: 400;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 100px; 
+}
+
+.read-more-btn {
+    background-color: black;
+    color: white;
+    padding: 12px 50px 12px 60px;
+    font-size: 24px;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 300px;
+    height: 65px;
+}
+
+.read-more-btn i {
+    font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .founders-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .founders-image {
+        width: 100%;
+        height: auto;
+    }
+
+    .founders-content {
+        width: 100%;
+        height: auto;
+        gap: 20px;
+    }
+}
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f8f9fa;
+    text-align: center;
+}
+
+/* Newsletter Section */
+.newsletter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+    position: relative; /* Ensures stacking order works */
+    z-index: 2; /* Places it above the footer */
+    display: flex;
+    justify-content: center;
+    margin-bottom: -100px;
+    
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width:867px;
+    height:350px;
+    position: relative; /* Keeps it above the footer */
+    z-index: 3;
+}
+
+.icon i {
+    font-size: 40px;
+    color: #28a745;
+    margin-bottom: 15px;
+}
+
+h2 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+p {
+    color: #555;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.subscribe-form {
+    display: flex;
+    justify-content: center;
+    gap: 0px;
+}
+
+.subscribe-form input {
+    padding: 10px;
+    width: 60%;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+     /* Rounded only on the left */
+    border-right: none;
+}
+
+.subscribe-form button {
+    padding: 10px 15px;
+    border: none;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    border-radius: 0 5px 5px 0; /* Rounded only on the left */
+    
+}
+
+.subscribe-form button:hover {
+    background-color: #333;
+}
+
+/* Footer */
+footer {
+    background: black;
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo img {
+    width: 50px;
+    border-radius: 50%;
+}
+
+.logo h3 {
+    color: #28a745;
+    font-size: 22px;
+    margin-top: 5px;
+}
+
+.links a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.links a:hover {
+    text-decoration: underline;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 20px;
+    margin: 0 10px;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    font-size: 12px;
+}
+
+.footer-bottom a {
+    color: #28a745;
+    text-decoration: none;
+}
+
+.footer-bottom a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .subscribe-form {
+        flex-direction: column;
+    }
+    
+    .subscribe-form input {
+        width: 100%;
+    }
+}
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+    background: #111111;
+    color: white;
+    flex-wrap: wrap;
+    height:400px;
+    
+}
+
+/* Left Section */
+.footer-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 200px;
+}
+
+.footer-logo {
+    width: 271.19px;
+    height: 141.76px;
+    margin-bottom: 50px;
+    margin-top: 100px;
+    
+    
+}
+
+.privacy-links {
+    font-size: 14px;
+    width: 550px;
+    height:17.82px;
+}
+
+.privacy-links a {
+    color:#90D06C;
+    margin-right: 10px;
+    font-family: Poppins;
+    font-weight: 300px;
+    font-size: 20px;
+    line-height: 120%;
+    letter-spacing: 2%;
+    text-decoration: none; 
+
+}
+.privacy-links a:nth-child(2) { 
+    color: white;  /* Makes 'Terms of Service' white */
+}
+
+/* Right Section */
+.footer-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-right: 100px;
+    margin-top:100px;
+    
+}
+
+.footer-links {
+    display: flex;
+    justify-content: start; /* Aligns both columns to the same start point */
+    gap: 50px;
+     /* Controls spacing between columns */
+}
+.footer-links ul {
+    list-style-type: disc !important; /* Ensures bullets appear */
+    list-style-position: outside; /* Keeps bullets outside the text */
+    padding-left: 20px; /* Adds space for bullets */
+    margin: 0;
+    min-width: 200px; /* Ensures consistent column width */
+}
+
+.footer-links li {
+    display: list-item !important; /* Forces list items to behave correctly */
+    margin-bottom: 20px; /* Adds spacing between items */
+    text-align: left; /* Ensures text alignment */
+    white-space: nowrap; 
+    word-spacing: 10px; 
+   font-size: 20px; 
+   font-family: Poppins;
+   display: inline-block; /* Prevents text from wrapping awkwardly */
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    display: inline-block;  
+    position: relative;
+}
+
+.footer-links a:hover {
+    color: white; /* Change text color on hover */
+}
+.footer-links a::after {
+    content: ""; 
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px; /* Thickness of underline */
+    background-color: white; /* White underline */
+    transform: scaleX(0); /* Initially hidden */
+    transition: transform 0.3s ease-in-out; /* Smooth animation */
+}
+
+.footer-links a:hover::after {
+    transform: scaleX(1); /* Show underline on hover */
+}
+/* Social Icons */
+.footer-social {
+    margin-top: 25px;
+    margin-left: 150px;
+    
+    
+}
+
+.footer-social a {
+    color: white;
+    margin-right: 20px;
+    font-size: 25px;
+}
+
+/* Copyright */
+.copyright {
+    text-align: center;
+    width: 100%;
+    padding-top: 10px;
+    color: white;
+    font-size: 18px;
+    
+}
+
+.footer-social a:nth-child(1) { color: #1877F2; } /* Facebook Blue */
+.footer-social a:nth-child(2) { color: #1DA1F2; } /* Twitter Blue */
+.footer-social a:nth-child(3) { color: #FF0000; } /* YouTube Red */
+.icon img {
+    width: 130px;  /* Adjust the size */
+    height: 130px;
+    margin-top: 5px;
+    
+}
+.newsletter p {
+    font-size: 15px; /* Increase to desired size */
+     /* Optional: Makes text slightly bolder */
+     margin-top: 20px;
+     margin-bottom: 20px;
+}
+.nav-menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+    .nav-menu ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav-menu ul.active {
+        display: flex;
+    }
+}
+.container {
+    width: 100%;
+    max-width: 1200px; /* Adjust based on your design */
+    margin: 0 auto; /* Centers the content */
+}
+* {
+    max-width: 100% !important;
+}
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+body {
+    overflow-x: hidden;
+}
+body {
+    font-size: 1rem; /* Instead of px */
+}
+@media (max-width: 1500px) {
+    footer {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .footer-left,
+    .footer-right {
+        margin: 0;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-logo {
+        width: 150px;
+        height: auto;
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+
+    .footer-links {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Ensures two equal columns */
+        gap: 20px;
+        width: 100%;
+        justify-content: center;
+        align-items: start;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .footer-links ul {
+        min-width: auto;
+        padding-left: 0;
+        list-style-position: inside;
+        text-align: left;
+    }
+
+    .footer-links li {
+        display: block;
+        font-size: 18px;
+        text-align: left;
+    }
+
+    .footer-social {
+        margin: 20px 0;
+    }
+
+    .copyright {
+        font-size: 14px;
+        padding: 10px 0;
+    }
+}
+/* ✅ Default: Display books in a row with proper scaling */
+.book-container {
+    display: grid !important;
+    grid-template-columns: repeat(5, 1fr) !important; /* 5 books per row */
+    gap: 0px !important;
+    justify-content: center !important;
+    align-items: start !important;
+    width: 100% !important;
+    max-width: 1400px !important; 
+    padding: 50px 0 !important;
+}
+
+/* ✅ Properly scale book images */
+.book-container img {
+    width: 250px !important;  /* Force Larger Size */
+    height: auto !important;
+    display: block !important;
+    margin: 0 auto !important;
+    object-fit: contain !important;
+    height: auto !important;
+    display: block !important;
+    margin: 0 auto !important;
+    margin-top: -20px;
+}
+.book-container img {
+    max-width: none !important;
+    min-width: 250px !important; 
+    margin: 0 !important;/* Prevent shrinking */
+}
+/* ✅ Medium Screens (Tablets) */
+@media (max-width: 1024px) {
+    .book-container {
+        grid-template-columns: repeat(3, 1fr) !important; /* 3 books per row */
+    }
+    .book-container img {
+        max-width: 180px !important; /* Adjust size */
+    }
+}
+
+/* ✅ Small Screens (Larger Mobile Devices) */
+@media (max-width: 768px) {
+    .book-container {
+        grid-template-columns: repeat(3, 1fr) !important; /* 2 books per row */
+    }
+    .book-container img {
+        max-width: 160px !important;
+    }
+}
+
+/* ✅ Mobile Screens */
+@media (max-width: 480px) {
+    .book-container {
+        grid-template-columns: repeat(3, 1fr) !important; /* 2 books per row */
+    }
+    .book-container img {
+        max-width: 140px !important;
+    }
+}
+
+/* ✅ Fix Overlapping Issue */
+.section {
+    padding-bottom: 40px !important;
+    min-height: auto !important; /* Remove unnecessary height */
+    padding: 40px 0 !important;  /* Adjusted padding */
+    margin-bottom: 20px !important; /* Adds space below */
+}
+/* ✅ Center the icon */
+.icon {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    margin-bottom: 20px !important; /* Add space below icon */
+}
+
+/* ✅ Ensure the image inside the icon is centered */
+.icon img {
+    display: block !important;
+    margin: 0 auto !important;
+    max-width: 150px !important; /* Adjust icon size */
+}
+/* ✅ Ensure all buttons are the same height & width */
+.course-button {
+    width: 100% !important;  /* Ensures uniform width */
+    max-width: 250px !important; /* Adjust as needed */
+    height: 50px !important; /* Ensures same height */
+    font-size: 16px !important; /* Uniform text size */
+    display: block !important;
+    margin: 20px auto 0 auto !important; /* Centers the button */
+    padding: 10px 0 !important;  /* Adjust button padding */
+}
+
+/* ✅ Ensure course cards align properly */
+.course-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between !important; /* Ensures uniform spacing */
+    min-height: 350px !important; /* Adjust height to match all cards */
+}
+
+/* ✅ Remove inline styles from buttons */
+.course-button {
+    margin-top: auto !important; /* Pushes button to the bottom of card */
+}
+.menu-items {
+    display: none; /* Hide menu by default */
+    flex-direction: column;
+    position: absolute;
+    top: 50px; /* Adjust as needed */
+    left: 0;
+    width: 100%;
+    background: white;
+    padding: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Show menu when 'show' class is added */
+.menu-items.show {
+    display: flex;
+}
+/* Dropdown Menu Styling */
+.dropdown {
+    position: relative !important;
+}
+
+.dropdown-menu {
+    display: none !important;
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    background: #fff !important;
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: 1px solid #ccc !important;
+    min-width: 150px !important;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1) !important;
+    z-index: 1000 !important;
+}
+
+.dropdown-menu li {
+    padding: 10px !important;
+}
+
+.dropdown-menu li a {
+    color: #333 !important;
+    display: block !important;
+    padding: 10px !important;
+    text-decoration: none !important;
+}
+
+/* Show dropdown when active */
+.dropdown.active .dropdown-menu {
+    display: block !important;
 }
